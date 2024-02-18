@@ -9,6 +9,9 @@ wget https://www.idrix.fr/VeraCrypt/VeraCrypt_PGP_public_key.asc
 # Schlüssel in den Schlüsselbund importieren, wenn der Fingerabdruck stimmt
 gpg --import --with-fingerprint --keyid-format LONG VeraCrypt_PGP_public_key.asc | grep 821ACD02680D16DE -c
 
+#Validate the Key's Fingerprint: During the key import process, carefully verify that the displayed fingerprint matches the official VeraCrypt fingerprint:
+#5069 A233 D55A 0EEB 174A 5FC3 821A CD02 680D 16DE
+#This step is vital for your security. Do not proceed if the fingerprints do not match. 
 #Prüfen
 gpg --list-keys
 
