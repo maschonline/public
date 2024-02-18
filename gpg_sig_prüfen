@@ -14,6 +14,3 @@ gpg --list-keys
 
 # Korrektheit des Debian-Paketes überprüfen
 gpg --verify veracrypt-*.deb.sig veracrypt-*.deb
-
-
-
