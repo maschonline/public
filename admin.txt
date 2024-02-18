@@ -1,0 +1,37 @@
+uptime && uptime -s
+df -h [-l]
+free -m
+du -xha --max-depth=1 / | sort -h
+ps auxwwf
+dmesg -t | tail
+systemctl --failed
+journalctl -xe [--priority=3]
+iostst -x 5 [-z]
+----------------------------------
+ip link
+ip a
+ip r
+ip route get $IP
+ss -tulpn0 [-e]
+ip rule list
+ping -D [-s $PKTSIZE] [-c $COUNT] [-4 | -6] $HOST
+dig $HOST [$TYPE] [+short]
+mtr --aslookup --report --report-cycles=10 $HOST
+----------------------------------
+systemctl --failed
+systemctl cat 'foo*'
+sudo systemctl status $PID
+sudo journalctl -u "foo*" --since 2023-04-15 -f
+coredumpctl debug
+
+----------------------------------
+htop
+-e: show process environment
+-H: hide/show process threads
+-K: hide/show kernel threads
+-l: list open files with lsof
+-s: trace syscalls with strace
+----------------------------------
+
+
+

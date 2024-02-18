@@ -1,0 +1,30 @@
+Copy a Local File to a Remote System with the scp Command
+
+scp file.txt remote_username@10.10.0.2:/remote/directory
+
+scp -r /local/directory remote_username@10.10.0.2:/remote/directory
+
+scp "~Projects/*.txt" remote_username@10.10.0.2:/home/user/Projects/
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Copy a Remote File to a Local System using the scp Command
+
+scp remote_username@10.10.0.2:/remote/file.txt /local/directory
+
+scp -r remote_username@10.10.0.2:/remote/directory /local/directory
+
+scp remote_username@10.10.0.2:/home/user/Projects/ "~Projects/*.txt" 
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+Copy a File Between Two Remote Systems using the scp Command #
+
+Unlike rsync , when using scp, you don’t have to log in to one of the servers to transfer files from one remote machine to another.
+
+scp user1@host1.com:/files/file.txt user2@host2.com:/files
+
+You will be prompted to enter the passwords for both remote accounts. The data will be transferred directly from one remote host to the other.
+
+To route the traffic through the machine on which the command is issued, use the -3 option:
+
+scp -3 user1@host1.com:/files/file.txt user2@host2.com:/files

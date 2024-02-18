@@ -1,2 +1,1 @@
-# public
-just a few shell commands
+Only a few Shell Commands 

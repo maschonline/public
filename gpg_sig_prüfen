@@ -1,0 +1,13 @@
+# Öffentlicher GPG-Schlüssel des VeraCrypt-Projektes
+wget https://www.idrix.fr/VeraCrypt/VeraCrypt_PGP_public_key.asc
+
+# Schlüssel in den Schlüsselbund importieren, wenn der Fingerabdruck stimmt
+gpg --with-fingerprint --keyid-format LONG VeraCrypt_PGP_public_key.asc | grep 821ACD02680D16DE -c
+
+gpg --import VeraCrypt_PGP_public_key.asc
+
+# Korrektheit des Debian-Paketes überprüfen
+gpg --verify veracrypt-*.deb.sig veracrypt-*.deb
+
+
+

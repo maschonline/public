@@ -1,0 +1,82 @@
+# Heimatverzeichnis
+chmod 755 /home/test
+# Verzeichnis mit privaten SSH-Einstellungen
+chmod 700 /home/test/.ssh
+# Rechte für alle Dateien setzen
+chmod 600 /home/test/.ssh/*
+# Rechte für authorized_keys
+chmod 644 /home/test/.ssh/authorized_keys
+
+
+
+
+
+# Erstellt ein Keypaar im Homeverzeichnis des Clients ~/.ssh
+ssh-keygen -t ed25519 
+
+# Der Public Key muss auf den Server ins Userverzeichnis ~./ssh/authorized_keys
+# Dieser Befehl lädt den Public Key auf den Server in die Datei authorized_keys
+# Beispiel:
+
+ssh-copy-id -i ~/.ssh/mypublickey.pub user@host
+
+
+Erstelle eine Datei :~/.ssh/config 
+
+Host *
+	UpdateHostKeys        yes
+
+Host pi
+	Hostname pi.local
+	User pi
+	IdentityFile ~/.ssh/raspi
+Host ionos
+	Hostname ionos.de
+	User xxxxxxxxx
+	IdentityFile ~/.ssh/ionos
+
+IdentityFile ist der Pfad zum Privaten Schlüssel.
+
+Aufruf über die Shell:  ssh pi oder ssh ionos
+
+
+Passwort vom privaten Schlüssel ändern
+
+$ ssh-keygen -p -f ~/.ssh/myprivatekey
+
+-----------------------------------------------------------------------------------------
+
+
+## Windows Client -> Linux Server
+
+## Windows Eingabeaufforderung:
+
+ssh-keygen -b 4096
+
+Der Private Schlüssel heisst: c:\User\Username\.ssh\id_rsa
+
+Der Public Key heisst: c:\User\Username\.ssh\id_rsa.pub
+
+## Kopiere Public Key auf Linux Server
+
+scp "c:\User\Username\.ssh\id_rsa.pub" user@192.168.0.2:~/.ssh
+
+cat ~/.ssh/id_rsa.pub >> authorized_keys
+
+chown username:username authorized_keys
+chmod 700 authorized_keys 
+
+
+##Enable only public key authentication in SSH 
+
+Edit the file with your favorite editor: /etc/ssh/sshd_config
+
+
+Lookup the variable: PasswordAuthentication and change 'yes' to 'no'
+
+Save and close the file
+
+-----------------------------------------------------------------------------------------
+
+$ ssh-keygen -p -f ~/.ssh/id_dsa
+

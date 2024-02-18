@@ -1,0 +1,34 @@
+MODI
+ESC i = Insertmode
+ESC v = Visualmode
+ESC : = commandmode
+
+
+Commandmode
+q = quit
+q! = quit without saving
+wq = write an quit
+dd = Zeile löschen
+x = Zeichen löschen
+
+
+Copy an Paste
+
+ESC :v (geht in den Mode VISUAL)
+Markierung auswählen
+y = Copy in die Zwischenablage (yanked)
+
+ESC (geht aus dem Mode VISUAL)
+p = Paste
+
+Nummern vor den Zeilen
+ESC + : (geht in den Commandmode)
+set number
+
+Fenster
+
+ESC : = commandmode
+Teilt Vim dem Bildschirm mit der Eingabe von ":split" auf. 
+Zwischen den beiden Fenstern wechseln Sie, indem Sie zweimal [Strg]+[w] drücken.
+Ein Unterfenster schließen Sie mit dem Befehl ":q" wieder
+

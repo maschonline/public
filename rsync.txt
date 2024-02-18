@@ -1,0 +1,2 @@
+# Backup mit rsync und löschen im Zielverzeichnis
+sudo rsync -rv --progress --delete <QUELLE> <ZIEL>

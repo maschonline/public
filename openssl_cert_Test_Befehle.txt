@@ -1,0 +1,31 @@
+-------------------TESTE ein Zertifikat---------------------------------------------------------------------------
+
+echo Q | openssl s_client -connect google.com:443 | openssl x509 -noout -text
+
+
+----------------------------------------------------------------------------------------------
+
+You can display the contents of a PEM formatted certificate under Linux, using openssl:
+
+openssl x509 -in acs.cdroutertest.com.pem -text
+
+----------------------------------------------------------------------------------------------
+
+
+Lese die Bitstaerke des Schluessels aus (%PEM% und %PASSWORD% ersetzen)
+
+openssl rsa -in %PEM% -text -noout -passin pass:"%PASSWORD%" | findstr "RSA Private-Key" 
+
+----------------------------------------------------------------------------------------------
+
+
+You should be able to use OpenSSL for your purpose:
+
+echo | openssl s_client -showcerts -servername gnupg.org -connect gnupg.org:443 2>/dev/null | openssl x509 -inform pem -noout -text
+
+That command connects to the desired website and pipes the certificate in PEM format on to another openssl command that reads and parses the details.
+
+(Note that "redundant" -servername parameter is necessary to make openssl do a request with SNI support.)
+
+
+----------------------------------------------------------------------------------------------

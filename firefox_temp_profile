@@ -1,0 +1,12 @@
+#!/bin/sh
+
+PROFILEDIR=`mktemp -p /tmp -d tmp-fx-profile.XXXXXX.d`
+
+firefox -profile $PROFILEDIR -no-remote -new-instance
+rm -rf $PROFILEDIR
+
+# In Windows use:
+
+# del /s /q c:\temp\firefox\*
+# start firefox -profile c:\temp\firefox -no-remote -new-instance
+

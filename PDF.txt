@@ -1,0 +1,1 @@
+exiftool -Title="Printed with Word" -Author="Printed with Word" -Subject="Printed with Word" -Producer="Printed with Word" -Creator="Printed with Word" <FILENAME>.pdf

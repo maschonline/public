@@ -1,0 +1,12 @@
+PC1 ->> RaspberryPI ->> fritz.box
+
+192.168.0.21 ->> 192.168.0.4 ->> 192.168.0.1
+
+Set forwarding on RaspberryPI
+
+pi@owncloud:~ $ mknod backpipe p
+pi@owncloud:~ $ netcat -l -p 2222 0<backpipe | netcat 192.168.0.1 80 1>backpipe
+
+On PC1 use:
+
+http://192.168.0.4:2222

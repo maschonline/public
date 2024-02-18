@@ -1,0 +1,8 @@
+# Convert Video in MP4
+
+ffmpeg -i <INPUT_FILE> -c:v libx264 -c:a copy <OUTPUT.mp4>
+
+# Merge Video and Audio
+
+ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac output.mp4
+

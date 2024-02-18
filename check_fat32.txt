@@ -1,0 +1,1 @@
+sudo dosfsck -w -r -l -a -v /dev/sdb1
