@@ -30,9 +30,10 @@ gocryptfs -masterkey=xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxx
 ## Gocrypt Im Reverse-Modus (Dateien sind entschlüsselt und werden beim Mounten verschlüsselt)
 
 Im Reverse-Modus wird der Inhalt von /home/masch/plain über das FUSE-Dateisystem bei /home/masch/Dropbox/crypt „read-only“ angezeigt, wenn dieses eingehängt ist. So kann beispielsweise ein verschlüsseltes Backup mittels rclone auf /home/masch/Dropbox/crypt angelegt werden.
-
+```
 mkdir /home/masch/plain 
 mkdir /home/masch/Dropbox/crypt
 gocryptfs -init -reverse /home/masch/plain
 gocryptfs -reverse /home/masch/plain /home/masch/Dropbox/crypt 
 umount /home/masch/Dropbox/crypt
+```
