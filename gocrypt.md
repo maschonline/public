@@ -23,17 +23,19 @@ Passwort ändern
 gocryptfs -config ~/.config/gocryptfs/KONFDATEI.conf -passwd /home/masch/plain 
 
 Mit Materkey, falls Passwort unbekannt
-gocryptfs -masterkey=xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx /home/masch/Dropbox/crypt/home/masch/plain 
+gocryptfs -masterkey=xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx-xxxxxxxx /home/masch/Dropbox/crypt /home/masch/plain 
 
 
 
 ## Gocrypt Im Reverse-Modus (Dateien sind entschlüsselt und werden beim Mounten verschlüsselt)
 
-Im Reverse-Modus wird der Inhalt von /home/masch/plain über das FUSE-Dateisystem bei /home/masch/Dropbox/crypt „read-only“ angezeigt, wenn dieses eingehängt ist. So kann beispielsweise ein verschlüsseltes Backup mittels rclone auf /home/masch/Dropbox/crypt angelegt werden.
+Im Reverse-Modus wird der Inhalt von /home/masch/plain über das FUSE-Dateisystem bei /home/masch/Dropbox/crypt „read-only“ angezeigt, wenn dieses eingehängt ist. So kann beispielsweise ein verschlüsseltes Backup angelegt werden, ohne weiteren Platzbedarf. 
 ```
 mkdir /home/masch/plain 
 mkdir /home/masch/Dropbox/crypt
 gocryptfs -init -reverse /home/masch/plain
-gocryptfs -reverse /home/masch/plain /home/masch/Dropbox/crypt 
+gocryptfs -reverse /home/masch/plain /home/masch/Dropbox/crypt
+touch /home/masch/text.txt
+scp -r /home/masch/Dropbox/crypt remote_username@10.10.0.2:/backup_von_masch_plain
 umount /home/masch/Dropbox/crypt
 ```
