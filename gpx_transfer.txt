@@ -1,0 +1,1 @@
+sudo gpsbabel -t -i gpx -f <FILENAME>.gpx -x simplify,count=500 -o garmin -F usb:
