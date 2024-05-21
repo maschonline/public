@@ -1,0 +1,5 @@
+# g springe zum Anfang
+# G springe zum Ende
+# e oder E spinge zu den Errormeldungen 
+
+journalctl -f | lnav
