@@ -1,0 +1,6 @@
+# HostPC <-------> Remote PC
+#
+# <interface_remote> Interfacename vom Remote PC
+# <IP_from_host_pc> IP Adresse vom Host PC, damit das SSH vom HostPC, rausgefiltert wird
+
+ssh pi "sudo /usr/bin/tcpdump -i <interface_remote> -U -w - 'not (host <IP_from_host_pc> and port 22)'" | wireshark -i - -k
