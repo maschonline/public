@@ -1,0 +1,10 @@
+cmd
+diskpart
+list diskpart  (Datenträgernummer ermitteln)
+select disk 1
+clean
+create partition primary size=4096
+format fs=fat32 quick
+exit
+
+
