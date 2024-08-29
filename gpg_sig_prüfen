@@ -41,3 +41,13 @@ gpg --list-keys
 
 # Korrektheit des Debian-Paketes überprüfen
 gpg --verify veracrypt-*.deb.sig veracrypt-*.deb
+
+-----------------------------------------------------------------------------
+
+In Windows (Powershell)
+
+Installiere Gpg4Win von https://www.gpg4win.org/index.html
+
+gpg --import VeraCrypt_PGP_public_key.asc
+
+gpg --verify .\VeraCrypt_Setup_x64_1.26.14.msi.sig .\VeraCrypt_Setup_x64_1.26.14.msi
