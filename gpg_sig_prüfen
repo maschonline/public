@@ -1,8 +1,32 @@
+Vorgehen:
+1. Der öffentliche Schlüssel wird runtergeladen und in den lokalen Speicher importiert
+2. Das Programm und die Signature wird heruntergeladen.
+3. Das Programm wird, mit Hilfe der Signature und des öffentlichen Schlüssels im Speicher, geprüft.
+
+Beispiel:
+gpg: Signatur vom 26.08.2024 23:39:39 Mitteleurop ische Sommerzeit
+gpg:                mittels RSA-Schlüssel 5069A233D55A0EEB174A5FC3821ACD02680D16DE
+--->> gpg: Korrekte Signatur von "VeraCrypt Team (2018 - Supersedes Key ID=0x54DDD393) <veracrypt@idrix.fr>" [unbekannt]
+
+-----------------------------------------------------------------------------
+
+Hashwert des heruntergeladenen Programms prüfen:
+
+Windows (Powershell):
+certutil -hashfile "VeraCrypt_Setup_x64_1.26.14.msi" SHA256
+Linux:
+sha256sum VeraCrypt_Setup_x64_1.26.14.msi 
+
+-----------------------------------------------------------------------------
+
 #Ggf. Rechte kontrollieren
 chmod 700 -R ~/.gnupg
 
 # Öffentlicher GPG-Schlüssel des VeraCrypt-Projektes
+
 wget https://www.idrix.fr/VeraCrypt/VeraCrypt_PGP_public_key.asc
+
+oder Download auf der Seite
 
 # Der aktuelle Fingerabdruck steht auf der Internetseite
 
