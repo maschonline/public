@@ -3,3 +3,23 @@
 # e oder E spinge zu den Errormeldungen 
 
 journalctl -f | lnav
+
+All boot cycles : 
+
+journalctl -o short-precise -k -b all
+
+Current boot : 
+
+journalctl -o short-precise -k
+
+Last boot : 
+
+journalctl -o short-precise -k -b -1
+
+dmesg
+
+
+Weitere Tools
+
+htop
+s-tui
