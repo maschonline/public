@@ -1,0 +1,6 @@
+about:config
+
+widget.non-native-theme.scrollbar.size.override: 20
+widget.gtk.overlay-scrollbars.enabled: false
+widget.non-native-theme.scrollbar.style: 4
+
