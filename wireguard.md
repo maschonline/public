@@ -1,5 +1,8 @@
-##1. Server-Konfiguration (`wg0.conf`)
+Eine WireGuard-Konfigurationsdatei besteht aus einem Server- und/oder Client-Block und enthält die notwendigen Einstellungen für die Verbindung. Hier ist ein einfaches Beispiel für eine Server- und Client-Konfigurationsdatei.
 
+### 1. Server-Konfiguration (`wg0.conf`)
+
+```ini
 [Interface]
 # Server Interface
 Address = 10.0.0.1/24           # IP-Adresse des Servers im VPN-Netzwerk
@@ -12,8 +15,9 @@ PublicKey = <CLIENT_PUBLIC_KEY>   # Der öffentliche Schlüssel des Clients
 AllowedIPs = 10.0.0.2/32          # IP-Adresse des Clients im VPN-Netzwerk
 ```
 
-##2. Client-Konfiguration (`wg0.conf`)
+### 2. Client-Konfiguration (`wg0.conf`)
 
+```ini
 [Interface]
 # Client Interface
 Address = 10.0.0.2/24           # IP-Adresse des Clients im VPN-Netzwerk
