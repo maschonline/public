@@ -42,6 +42,8 @@ gpg --list-keys
 # Korrektheit des Debian-Paketes überprüfen
 gpg --verify veracrypt-*.deb.sig veracrypt-*.deb
 
+#### The output of the last command should tell you that the file signature is good and that it was signed with the 5069 A233 D55A 0EEB 174A 5FC3 821A CD02 680D 16DE key.
+
 -----------------------------------------------------------------------------
 
 In Windows (Powershell)
